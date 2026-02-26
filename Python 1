@@ -1,0 +1,105 @@
+
+try:
+    n_price=float(input("Notebook price:"))
+    p_price=float(input("Pencil price:"))
+    n_count=int(input("Notebook count:"))
+    p_count=int(input("Pencil count:"))
+    price=n_count*n_price + p_count*p_price
+    print(f"{n_count} notebooks and {p_count} pencils total price: {price}")
+except:
+    print("Error!")
+
+
+
+
+try:
+    minutes_1=int(input("Minute:"))
+    hours=minutes_1//60
+    minutes_2=minutes_1%60
+    print(f"{minutes_1} minutes = {hours} hours {minutes_2} minutes")
+except:
+    print("Error!")
+
+
+
+try:
+    number=int(input("Enter 4 digit number:"))
+    number_1=number//1000;number_2=(number//100)%10;number_3=(number//10)%10;number_4=number%10
+    sum_numbers=number_1+number_2+number_3+number_4
+    product=number_1*number_2*number_3*number_4
+    print(f"Digits: {number_1} {number_2} {number_3} {number_4}")
+    print(f"Sum of digits: {number_1} + {number_2} + {number_3} + {number_4} = {sum_numbers}")
+    print(f"Product of digits: {number_1} * {number_2} * {number_3} * {number_4} = {product}")
+except:
+    print("Error!")
+
+
+
+try:
+    from math import *
+    side_1=int(input("Side 1:"))
+    side_2=int(input("Side 2:"))
+    side_3=int(input("Side 3:"))
+    if ((side_1+side_2)>side_3 and (abs(side_1-side_2))<side_3) and ((side_2+side_3)>side_1 and (abs(side_3-side_2))<side_1) and ((side_1+side_3)>side_2 and (abs(side_3-side_1))<side_3):
+        s=(side_1+side_2+side_3)/2
+        sahe=sqrt(s*(s-side_1)*(s-side_2)*(s-side_3))
+        print(f"Area of triangle: {"{:.2f}".format(sahe)}")
+    else:
+        print("Sides are incorrect")
+except:
+    print("Error!")
+
+
+try:
+    from math import *
+    a=int(input("Enter a: "))
+    b=int(input("Enter b: "))
+    print(f"{a} + {b} = {a+b}")
+    print(f"{a} - {b} = {a-b}")
+    print(f"{a} * {b} = {a*b}")
+    print(f"{a} % {b} = {a%b}")
+    print(f"{a} // {b} = {a//b}")
+    print(f"{a} ** {b} = {a**b}")
+    print(f"log10( 6 ) = {"{:.2f}".format(log(a,10))}")
+except:
+    print("Error!")
+
+
+
+try:
+    number=int(input("Enter a number: "))
+    summ=number*(number+1)/2
+    print(f"Result: {summ}")
+except:
+    print("Error!")
+
+
+
+
+try:
+    from math import *
+    length=int(input("Length: "))
+    n_sides=int(input("Number of sides: "))
+    sahe=(n_sides*length**2)/(4*tan(pi/n_sides))
+    print(f"Area: {"{:.5f}".format(sahe)}")
+except:
+    print("Errror!")
+
+
+try:
+    selsi=int(input("Temperature (C): "))
+    faranheit=selsi*9/5+32
+    print(f"{selsi} Celcius = {"{:.2f}".format(faranheit)} Fahrenheit")
+except:
+    print("Error!")
+
+
+   
+try:
+    number_loaves=int(input("Number of loaves: "))
+    price=3.49
+    print(f"Total price: {"{:.2f}".format(number_loaves*price)} dollars")
+    print(f"Discount: {"{:.2f}".format(number_loaves*(price*0.6))} dollars")
+except:
+    print("Errror!")
+
