@@ -1,0 +1,208 @@
+""" 1
+def uzunluq(x):
+    s=0
+    while x>0:
+        x=x//10
+        s=s+1
+    return s
+eded=int(input("eded daxil edin: "))
+leng=uzunluq(eded)
+def dis(n):
+    k=0
+    pre_n=n
+    global leng
+    while n>0:
+        k = k + (n%10)**leng
+        leng=leng-1
+        n=n//10
+    return "Disariumdur" if pre_n == k else "Disarium deyil"
+print(dis(eded))
+"""
+
+""" 2
+def f(x):
+    return "Curzondur" if (2**x+1) % (2*x+1) == 0 else "Curzon deyil"
+eded=int(input("eded daxil edin: "))
+print(f(eded))
+"""
+
+''' 3
+def kemp(n):
+    f=1
+    m=1
+    while True:
+        f=f*m
+        if f % n == 0:
+            return m
+        m=m+1
+eded=int(input("eded daxil edin: "))
+print(kemp(eded))
+'''
+''' 4
+def summ(x):
+    s = 0
+    while x > 0:
+        s = s + x % 10
+        x = x // 10
+    return s
+def sade(n):
+    s = 0
+    for i in range (1,n//2+1):
+        if n % i == 0:
+            s = s + 1
+    return True if s==1 else False
+eded = int(input("eded daxil edin: "))
+if sade(eded // summ(eded)):
+    print("Moran")
+else:
+    print("non-Moran")
+'''
+
+''' 5
+def uzunluq(x):
+    s=0
+    while x>0:
+        x=x//10
+        s=s+1
+    return s
+eded = int(input("eded daxil edin: "))
+lenn = uzunluq(eded)
+def f(n):
+    global lenn
+    cem = n%10 + n//10**(lenn-1)
+    return True if cem**0.5 > 3 else False
+if f(eded):
+    print("3den boyukdur")
+else:
+    print("3den boyuk deyil") 
+'''
+
+''' 6
+def f(a,b):
+    flag=0
+    i=2
+    while True:
+        if a % i == 0 and b % i ==0:
+            flag = 1
+            return flag
+        i = i + 1
+        return flag
+a = int(input("eded daxil edin: "))
+b = int(input("eded daxil edin: "))
+if f(a,b) == 1:
+    print("qarsiliqli sade deyiller")
+else:
+    print("qarsiliqli sadediler")
+'''   
+
+''' 7
+def sade(n):
+    s = 0
+    for i in range (1,n//2+1):
+        if n % i == 0:
+            s = s + 1
+    return True if s==1 else False
+def f(n):
+    say = 0
+    uzunluq = 0
+    while n>0:
+        if sade(n%10):
+            say = say + 1
+        uzunluq = uzunluq + 1
+        n = n // 10
+    return "hiper-sadedir" if uzunluq == say else "hiper-sade deyil"
+eded = int(input("eded daxil edin: "))
+print(f(eded))
+'''
+
+''' 8
+def f(a,b):
+    x, y = a, b
+    while a != b:
+        if a > b:
+            a = a - b
+        else:
+            b = b - a
+    ebob = a
+    ekob = (x*y) // ebob
+    return f"Ebob = {ebob}, Ekob = {ekob}"
+a = int(input("eded daxil edin: "))
+b = int(input("eded daxil edin: "))
+print(f(a,b))
+'''
+
+
+
+''' 10
+def f(m,n):
+    while m != n:
+        if m > n:
+            m = m - n
+        else:
+            n = n - m
+    ebob = m
+    return m // ebob, n // ebob
+m = int(input("eded daxil edin: "))
+n = int(input("eded daxil edin: "))
+print(f(m,n))
+'''
+
+''' 11
+def ters(x):
+    s = 0
+    while x > 0:
+        s = s * 10 + x % 10
+        x = x // 10
+    return s
+eded = int(input("eded daxil edin: "))
+print(ters(eded))
+'''
+
+
+
+
+
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
