@@ -1,0 +1,134 @@
+""" 1 (tam olmadi)
+print("Celsius","Fahrenheit",sep="   ")
+for i in range(0,101,10):
+    f=i*9/5+32
+    print(i,f,sep="         ")
+"""
+
+""" 2
+try:
+    from random import *
+    n=int(input("Max number to compute the average value: "))
+    cem=0
+    for i in range(1,n+1):
+        value=random()
+        print(f"Value 1: {value}")
+        cem=cem+value
+    print(f"Average value: {cem/n}")
+except:
+    print("Error")
+"""
+
+""" 3 
+letter=input("Enter the grade: ")
+cem=0
+say=0
+if letter=="A+":
+    cem=cem+4.0
+    say=say+1
+elif letter=="A":
+    cem=cem+4.0
+    say=say+1
+elif letter=="A-":
+    cem=cem+3.7
+    say=say+1
+elif letter=="B+":
+    cem=cem+3.3
+    say=say+1
+elif letter=="B":
+    cem=cem+3.0
+    say=say+1
+elif letter=="B-":
+    cem=cem+2.7
+    say=say+1
+elif letter=="C+":
+    cem=cem+2.3
+    say=say+1
+elif letter=="C":
+    cem=cem+2.0
+    say=say+1
+elif letter=="C-":
+    cem=cem+1.7
+    say=say+1
+elif letter=="D+":
+    cem=cem+1.3
+    say=say+1
+elif letter=="D":
+    cem=cem+1.0
+    say=say+1
+elif letter=="F":
+    cem=cem+0
+    say=say+1
+while letter!="end":
+    letter=input("Enter the grade: ")
+    if letter=="A+":
+        cem=cem+4.0
+        say=say+1
+    elif letter=="A":
+        cem=cem+4.0
+        say=say+1
+    elif letter=="A-":
+        cem=cem+3.7
+        say=say+1
+    elif letter=="B+":
+        cem=cem+3.3
+        say=say+1
+    elif letter=="B":
+        cem=cem+3.0
+        say=say+1
+    elif letter=="B-":
+        cem=cem+2.7
+        say=say+1
+    elif letter=="C+":
+        cem=cem+2.3
+        say=say+1
+    elif letter=="C":
+        cem=cem+2.0
+        say=say+1
+    elif letter=="C-":
+        cem=cem+1.7
+        say=say+1
+    elif letter="D+":
+        cem=cem+1.3
+        say=say+1
+    elif letter=="D":
+        cem=cem+1.0
+        say=say+1
+    else:
+        cem=cem+0
+        say=say+1
+print(f"Grade point average: {cem/say}")
+"""
+
+""" 4
+age=input("Enter the age of guest: ")
+total=0
+while age!="end":
+    if int(age)<=2:
+       total=total+0
+    elif 12>=int(age)>=3:
+       total=total+14
+    elif int(age)>=65:
+       total=total+18
+    else:
+       total=total+23
+    age=input("Enter the age of guest: ")
+print(f"The total for that group is ${"{:.2f}".format(total)}")
+"""
+
+""" 5(cavab duz cixmir)
+from math import *
+x=input("Enter x: ")
+y=input("Enter y: ")
+last_x=x
+last_y=y
+perimetr=0
+while x!="end" or y!="end":
+    perimetr=perimetr+sqrt((int(x)-int(last_x))**2+(int(y)-int(last_y))**2)
+    last_x=x
+    last_y=y
+    x=input("Enter x: ")
+    y=input("Enter y: ")
+print(f"The perimetr of that polygon is {perimetr}")
+"""    
+
