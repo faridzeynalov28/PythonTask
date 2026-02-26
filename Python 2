@@ -1,0 +1,181 @@
+""" 1
+try:
+    letter=input("Enter a letter of the alphabet: ")
+    if letter=="a" or letter=="e" or letter=="i" or letter=="o" or letter=="u":
+        print("Entered alphabet is a consonant")
+    elif letter=="y":
+        print("Sometimes it is a vowel, and sometimes it is a consonant")
+    else:
+        print("Entered alphabet is a vowel")
+except:
+    print("Error!")
+"""
+
+
+""" 2
+try:
+    month=input("Enter name of the month: ")
+    day=int(input("Enter the day: "))
+    if (31>=day>=21 and month=="December") or (31>=day>=1 and month=="January") or (31>=day>=1 and month=="February") or (19>=day>=1 and month=="March):
+        print(f"{month} {day} is in Winter")
+    elif (31>=day>=20 and month=="March") or (31>=day>=1 and month=="April") or (31>=day>=1 and month=="May") or (20>=day>=1 and month=="June"):
+        print(f"{month} {day} is in Spring")
+    elif (31>=day>=21 and month=="June") or (31>=day>=1 and month=="July") or (31>=day>=1 and month=="August") or (21>=day>=1 and month=="September"):
+        print(f"{month} {day} is in Summer")
+    else:
+        print(f"{month} {day} is in Fall")
+except:
+    print("Error!")
+"""
+
+
+""" 3
+try:
+    w_length=int(input("Enter rhe wavelength in nm: "))
+    if 450>w_length>=380:
+        print("The relevant color is Violet")
+    elif 495>w_length>=450:
+        print("The relevant color is Blue")
+    elif 570>w_length>=495:
+        print("The relevant color is Green")
+    elif 590>w_length>=570:
+        print("The relevant color is Yellow")
+    elif 620>w_length>=590:
+        print("The relevant color is Orange")
+    elif 750>w_length>=620:
+        print("The relevant color is Red")
+    else:
+        print("Invalid input!")
+except:
+    print("Error!")
+"""
+
+""" 4
+try:
+    year=int(input("Enter the year: "))
+    if year==2000:
+        print(f"{year} is the year of the Tiger")
+    elif year==2001:
+        print(f"{year} is the year of the Snake")
+    elif year==2002:
+        print(f"{year} is the year of the Horse")
+    elif year==2003:
+        print(f"{year} is the year of the Sheep")
+    elif year==2004:
+        print(f"{year} is the year of the Monkey")
+    elif year==2005:
+        print(f"{year} is the year of the Rooster")
+    elif year==2006:
+        print(f"{year} is the year of the Dog")
+    elif year==2007:
+        print(f"{year} is the year of the Pig")
+    elif year==2008:
+        print(f"{year} is the year of the Rat")
+    elif year==2009:
+        print(f"{year} is the year of the Ox")
+    elif year==2010:
+        print(f"{year} is the year of the Tiger")
+    elif year==2011:
+        print(f"{year} is the year of the Hare")
+    else:
+        print("Invalid year!")
+else:
+    print("Error!")
+"""
+
+""" 5
+try:
+    month=input("Enter a month: ")
+    day=int(input("Enter the day: "))
+    if (31>=day>=22 and month=="December") or (19>=day>=1 and month=="January"):
+        print("Your zodiac sign is Capricorn")
+    elif (31>=day>=20 and month=="January") or (18>=day>=1 and month=="February"):
+        print("Your zodiac sign is Aquarius")
+    elif (31>=day>=19 and month=="February") or (20>=day>=1 and month=="March"):
+        print("Your zodiac sign is Pisces")
+    elif (31>=day>=21 and month=="March") or (19>=day>=1 and month=="April"):
+        print("Your zodiac sign is Aries")
+    elif (31>=day>=20 and month=="April") or (20>=day>=1 and month=="May"):
+        print("Your zodiac sign is Taurus")
+    elif (31>=day>=21 and month=="May") or (20>=day>=1 and month=="June"):
+        print("Your zodiac sign is Gemini")
+    elif (31>=day>=21 and month=="June") or (22>=day>=1 and month=="July"):
+        print("Your zodiac sign is Cancer")
+    elif (31>=day>=23 and month=="July") or (22>=day>=1 and month=="August"):
+        print("Your zodiac sign is Leo")
+    elif (31>=day>=23 and month=="August") or (22>=day>=1 and month=="September"):
+        print("Your zodiac sign is Virgo")
+    elif (31>=day>=23 and month=="September") or (22>=day>=1 and month=="October"):
+        print("Your zodiac sign is Libra")
+    elif (31>=day>=23 and month=="October") or (21>=day>=1 and month=="November"):
+        print("Your zodiac sign is Scorpio")
+    elif (31>=day>=22 and month=="November") or (22>=day>=1 and month=="December"):
+        print("Your zodiac sign is Sagittarius")
+    else:
+        print("Either a month or a day is invalid!")
+except:
+    print("Error!")
+"""
+
+""" 6
+try:
+    x=float(input("Enter x: "))
+    y=float(input("Enter y: "))
+    if (x**2+y**2)>=4 and x<=2 and y>=x and y>=0:
+        print("The point is in the shaded area")
+    else:
+        print("The point is in not in the shaded area")
+except:
+    print("Error!")
+"""
+
+""" 7
+try:
+    x=float(input("Enter x: "))
+    y=float(input("Enter y: "))
+    if (y>=((x-2)**2-3) and y>=0 and x>=abs(y)) or (y>=((x-2)**2-3) and x<=abs(y) and y<=0):
+        print("The point is in the shaded area")
+    else:
+        print("The point is in not in the shaded area")
+except:
+    print("Error!")
+"""
+
+""" 8
+try:
+    x=float(input("Enter x: "))
+    y=float(input("Enter y: "))
+    if (y<=x**2 and y>=2-x and x<=0) or (y<=x**2 and y<=2-x and x>=0 and y>=0):
+         print("The point is in the shaded area")
+    else:
+        print("The point is in not in the shaded area")
+except:
+    print("Error!")
+"""
+
+
+""" 9
+try:
+    x=float(input("Enter x: "))
+    y=float(input("Enter y: "))
+    if (x**2+y**2<=1 and y>=x and y>=-x) or (x**2+y**2<=1 and y>=x and y<=0) or (x**2+y**2<=1 and y>=x and y<=0) or (x**2+y**2>=1 and y<=x and y<=0 and x<=0) or (x**2+y**2>=1 and y<=-x and y<=0 and x<=0):
+         print("The point is in the shaded area")
+    else:
+        print("The point is in not in the shaded area")
+except:
+    print("Error!")
+"""  
+
+""" 10
+try:
+    x=float(input("Enter x: "))
+    y=float(input("Enter y: "))
+    if (y>=x**2 and y>=4-x**2 and x>=0) or (y<==x**2 and y>=2-x and x<=0) \
+       or (y>=x**2 and y<=4-x**2 and x<=0 and y<=2-x) or (y<=x**2 and y<=4-x**2 and x>=0 and y<=2-x and y>=0):
+        print("The point is in the shaded area")
+    else:
+        print("The point is in not in the shaded area")
+except:
+    print("Error!")
+"""  
+     
