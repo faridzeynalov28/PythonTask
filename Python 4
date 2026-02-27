@@ -106,11 +106,11 @@ def f(n):
     say = 0
     uzunluq = 0
     while n>0:
-        if sade(n%10):
+        if sade(n//10):
             say = say + 1
         uzunluq = uzunluq + 1
         n = n // 10
-    return "hiper-sadedir" if uzunluq == say else "hiper-sade deyil"
+    return "hiper-sadedir" if (uzunluq-1) == say else "hiper-sade deyil"
 eded = int(input("eded daxil edin: "))
 print(f(eded))
 '''
