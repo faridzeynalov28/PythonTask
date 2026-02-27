@@ -171,8 +171,12 @@ else:
     prnt("yes")
 '''
 
-
-
+'''
+def ebob(a,b):
+    while b != 0:
+        a, b = b, a%b
+    return a
+'''
 
 
             
