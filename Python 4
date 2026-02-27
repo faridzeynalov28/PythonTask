@@ -158,7 +158,18 @@ eded = int(input("eded daxil edin: "))
 print(ters(eded))
 '''
 
-
+'''
+num = int(input("Eded daxil edin: "))
+while num > 9:
+    first_dig = num % 10
+    second_dig = num // 10 % 10
+    if first_dig < second_dig:
+        print("No")
+        break
+    num = num // 10
+else:
+    prnt("yes")
+'''
 
 
 
