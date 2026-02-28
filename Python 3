@@ -1,4 +1,4 @@
-""" 1 (tam olmadi)
+""" 1 
 print("Celsius","Fahrenheit",sep="   ")
 for i in range(0,101,10):
     f=i*9/5+32
@@ -116,19 +116,5 @@ while age!="end":
 print(f"The total for that group is ${"{:.2f}".format(total)}")
 """
 
-""" 5(cavab duz cixmir)
-from math import *
-x=input("Enter x: ")
-y=input("Enter y: ")
-last_x=x
-last_y=y
-perimetr=0
-while x!="end" or y!="end":
-    perimetr=perimetr+sqrt((int(x)-int(last_x))**2+(int(y)-int(last_y))**2)
-    last_x=x
-    last_y=y
-    x=input("Enter x: ")
-    y=input("Enter y: ")
-print(f"The perimetr of that polygon is {perimetr}")
-"""    
+
 
