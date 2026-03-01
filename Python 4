@@ -237,6 +237,7 @@ def ters(x):
 eded = int(input("eded daxil edin: "))
 print(ters(eded))
 '''
+
 '''
 num = int(input("Eded daxil edin: "))
 while num > 9:
