@@ -1,0 +1,134 @@
+''' 1
+try:
+    num = int(input("Enter the number (N>0): "))
+    maks = 0
+    while num > 1:
+        print(num, end=" ")
+        if num % 2 == 0:
+            num = num // 2
+        else:
+            num = num * 3 + 1
+        if maks < num:
+            maks = num
+    print(num)
+    print(f"Max number: {maks}")
+except:
+    print("Error")
+'''
+
+''' 2
+try:
+    num = int(input("Enter the number: "))
+    def ters(n):
+        s = 0
+        while n > 0:
+            s = s * 10 + n % 10
+            n = n // 10
+        return s
+    def length_num(n):
+        say = 0
+        while n > 0:
+            say = say + 1
+            n = n // 10
+        return say
+    def c_simmetrik(n, t):
+        k = length_num(n)
+        t_cem = 0
+        n_cem = 0
+        for i in range (1, k + 1):
+            t_cem = (t % 10) * i
+            n_cem = (n % 10) * i
+            t = t // 10
+            n = n // 10
+        return True if t_cem == n_cem else False
+    print(c_simmetrik(num, ters(num)))
+except:
+    print("Error!")
+'''
+
+''' 3
+try:
+    num = int(input("Enter the number (N>0): "))
+    def length_num(n):
+        say = 0
+        while n > 0:
+            say = say + 1
+            n = n // 10
+        return say
+    def look_and_say(num):
+        lenn = length_num(num)
+        if lenn % 2 == 1:
+            return "Invalid!"
+        else:
+            k = ""
+            while num > 0:
+                digit_1 = num % 10
+                digit_2 = num // 10 % 10
+                k = str(digit_1) * digit_2 + k
+                num = num // 100
+            return k
+    print(look_and_say(num))
+except:
+    print("Error")
+'''
+
+''' 4
+try:
+    num = int(input("Enter the number (N>0): "))
+    def is_Palindrome(n):
+        pre_n = n
+        p = 0
+        while n > 0:
+            p = p * 10 + n % 10
+            n = n // 10
+        return True if p == pre_n else False
+    def to_Binary(n):
+        binary = 0
+        say = 0
+        while n > 0:
+            binary = n % 2 * 10 ** say + binary
+            n = n // 2
+            say = say + 1
+        return binary
+    def palindrome_type(num, binary):
+        if is_Palindrome(num) and is_Palindrome(binary):
+            return "Palindrome type is Decimal and Binary"
+        elif is_Palindrome(num):
+            return "Palindrome type is Decimal"
+        elif is_Palindrome(binary):
+            return "Palindrome type is Binary"
+        else:
+            return "Palindrome type is neither Decimal nor Binary"
+    print(f"Decimal: {num}")
+    print(f"Binary: {to_Binary(num)}")
+    print(palindrome_type(num, to_Binary(num)))
+except:
+    print("Error!")
+'''
+
+''' 5
+try:
+    n = int(input("Enter N: "))
+    p = int(input("Enter P: "))
+    pre_n = n
+    def length_num(n):
+        say = 0
+        while n > 0:
+            say = say + 1
+            n = n // 10
+        return say
+    ters = 0
+    while n > 0:
+        ters = ters * 10 + n % 10
+        n = n // 10
+    def np_to_k(num, pos):
+        global ters
+        cem = 0
+        for i in range (pos, pos + length_num(num) + 1):
+            cem = cem + (ters % 10) ** i
+            ters = ters // 10
+        return cem // num if cem // num == cem / num else "None"
+    print(f"K: {np_to_k(pre_n, p)}")
+except:
+    print("Error!")
+'''
