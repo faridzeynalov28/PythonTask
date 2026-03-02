@@ -115,10 +115,10 @@ else:
 
 ''' 10
 def uzunluq(x):
-    s=0
-    while x>0:
-        x=x//10
-        s=s+1
+    s = 0
+    while x > 0:
+        x = x // 10
+        s = s + 1
     return s
 eded = int(input("eded daxil edin: "))
 lenn = uzunluq(eded)
@@ -182,7 +182,7 @@ def f(a,b):
         else:
             b = b - a
     ebob = a
-    ekob = (x*y) // ebob
+    ekob = (x *  y) // ebob
     return f"Ebob = {ebob}, Ekob = {ekob}"
 a = int(input("eded daxil edin: "))
 b = int(input("eded daxil edin: "))
