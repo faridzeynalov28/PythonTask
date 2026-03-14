@@ -1,0 +1,402 @@
+''' 1
+y = int(input("Enter the number: "))
+x = int(input("Enter the number: "))
+if y >= abs(2 * x) and y >= 6 * x ** 2 and y >= 0.5 and x ** 2 + y ** 2 <= 1:
+    print("Oblastdadir")
+else:
+    print("Oblastda deyil")
+'''
+
+'''' 2
+num = int(input("Enter the number: "))
+def sade(n):
+    s = 0
+    for i in range (2, n // 2 + 1):
+        if n % i == 0:
+            s = 1
+    return True if s == 0 else False
+cem = 0
+while sade(num):
+    cem = cem + num
+    num = int(input("Enter the number: "))
+print(f"Total sum of prime numbers: {cem}")
+'''
+
+''' 3
+def r_cem(n):
+    cem = 0
+    while n > 0:
+        cem = cem + n % 10
+        n = n // 10
+    return cem
+def r_koku(n):
+    addim = 0
+    pre_n = n
+    while n > 9:
+        n = r_cem(n)
+        addim = addim + 1
+        print(f"Step {addim}:", end =" ")
+        while pre_n > 10:
+            print(pre_n % 10, "+", end =" ")
+            pre_n = pre_n // 10
+        print(f"{pre_n % 10} = {n}")
+        pre_n = n
+    print(f"Digital root: {n}")
+    print(f"Total steps: {addim}")
+num = int(input("Enter the number: "))
+r_koku(num)
+'''
+
+''' 4
+num = int(input("Enter the number: "))
+def binary(n):
+    s = 0
+    k = 0
+    while n > 0:
+        s = s + n % 2 * 10 ** k
+        k = k + 1
+        n = n // 2
+    return s
+
+say = 0
+k = binary(num)
+while k > 0:
+    if k % 10 == 1:
+        say = say + 1
+    k = k // 10
+
+if num % 10 == say:
+    print("Result True. It is a Mirror number")
+else:
+    print("Result False. It is not a Mirror number")
+'''
+
+''' 5
+num = int(input("Enter the number: "))
+def sade(n):
+    s = 0
+    for i in range (2, n // 2 + 1):
+        if n % i == 0:
+            s = 1
+    return True if s == 0 else False
+def binary(n):
+    s = 0
+    k = 0
+    say = 0
+    while n > 0:
+        s = s + n % 2 * 10 ** k
+        k = k + 1
+        if n % 2 == 1:
+            say = say + 1
+        n = n // 2
+    return True if say % 2 == 1 else False
+def binary_1(n):
+    s = 0
+    k = 0
+    say = 0
+    while n > 0:
+        s = s + n % 2 * 10 ** k
+        k = k + 1
+        if n % 2 == 1:
+            say = say + 1
+        n = n // 2
+    return True if say > 3 else False
+def r_cem(n):
+    cem = 0
+    while n > 0:
+        cem = cem + n % 10
+        n = n // 10
+    return True if cem % 5 == 0 else False
+if sade(num) and binary(num):
+    print(f"{num} seviyye bir suzgecinden kecdi")
+elif not(sade(num)) and r_cem(num):
+    print(f"{num} seviyye iki suzgecinden kecdi")
+elif binary_1(num):
+    print(f"{num} seviyye uc suzgecinden kecdi")
+'''
+
+''' 1
+def is_p_number(n):
+    cem = 0
+    for i in range (1, n):
+        if n % i == 0:
+            cem = cem + i
+    return True if cem == n else False
+start = int(input("Enter start: "))
+end = int(input("Enter end: "))
+for i in range (start, end + 1):
+    if is_p_number(i):
+        print(f"Perfect number found: {i}")
+        print("Divisors:", end=" ")
+        for k in range (1, i):
+            if i % k == 0:
+                print(k, end=" ")
+        print(end = "\n")
+'''
+
+''' 2
+def sum_digits(n):
+    cem = 0
+    while n > 0:
+        cem = cem + n % 10
+        n = n // 10
+    return cem
+def harshad_chain(n):
+    say = 0
+    while n > 1:
+        if n % sum_digits(n) == 0:
+            say = say + 1
+            pre_n = n
+            n = n // sum_digits(n)
+            print(f"Step {say}: {pre_n} / {sum_digits(n)} = {n}")
+        else:
+            print(0)
+            break
+    print(f"Total chain length: {say}")
+num = int(input("Enter the number: "))
+harshad_chain(num) 
+'''        
+
+''' 3
+def max_digits(n):
+    maks = 0
+    while n > 0:
+        if maks < n % 10:
+            maks = n % 10
+        n = n // 10
+    return maks
+def count_binary_digits(n):
+    say = 0
+    k = 0
+    binary = 0
+    while n > 0:
+        binary = binary + n % 2 * 10 ** k
+        k = k + 1
+        n = n // 2
+    while binary > 0:
+        if binary % 10 == 1:
+            say = say + 1
+        binary = binary // 10
+    return say
+def is_dominant_trip(n):
+    if max_digits(n) == count_binary_digits(n):
+        print("Result: True")
+    else:
+        print("Result: False")
+    print(f"Binary ones count: {count_binary_digits(n)}")
+    print(f"Max digit: {max_digits(n)}")
+num = int(input("Enter the number: "))
+is_dominant_trip(num)
+'''
+
+''' 4
+def is_p_number(n):
+    cem = 0
+    for i in range (1, n):
+        if n % i == 0:
+            cem = cem + i
+    return True if cem == n else False
+def sade(n):
+    s = 0
+    for i in range (2, n // 2 + 1):
+        if n % i == 0:
+            s = 1
+    return True if s == 0 else False
+def rotate_number(n):
+    say = 0
+    pre_n = n
+    while n > 0:
+        say = say + 1
+        n = n // 10
+    first_digit = pre_n // 10 ** (say - 1)
+    new_n = (pre_n % 10 ** (say - 1)) * 10 + first_digit
+    return new_n
+def binary_weight_type(n):
+    say = 0
+    k = 0
+    binary = 0
+    while n > 0:
+        binary = binary + n % 2 * 10 ** k
+        k = k + 1
+        n = n // 2
+    while binary > 0:
+        if binary % 10 == 1:
+            say = say + 1
+        binary = binary // 10
+    if say % 2 == 0:
+        return 2
+    elif say % 2 == 1:
+        return 1
+    else:
+        return 0
+def analyze_complex_number(n):
+    print(f"Original: {n}")
+    print(f"Rotated: {rotate_number(n)}")
+    print(f"Binary weight type: {binary_weight_type(n)}")
+    if sade(n) and rotate_number(n):
+        print("Category A")
+    elif not(sade(n)) and binary_weight_type(n) == 2:
+        print("Category B")
+    elif is_p_number(n):
+        print("Category C")
+    else:
+        print("Default")
+num = int(input("Enter the number: "))
+analyze_complex_number(num)
+'''
+
+''' 5
+def fact(n):
+    f = 1
+    for i in range (1, n + 1):
+        f = f * i
+    return f
+def kv_cem(n):
+    cem = 0
+    while n > 0:
+        cem = cem + (n % 10) ** 2
+        n = n // 10
+    return cem
+def get_factorial_sum(n):
+    cem = 0
+    while n > 0:
+        cem = cem + fact(n % 10)
+        n = n // 10
+    return cem
+def is_happy(n):
+    flag = 0
+    pre_n = n
+    while n > 1:
+        n = kv_cem(n)
+        if n == 4:
+            flag = 1
+            break
+    if flag == 0:
+        print("-------------------------------------------")
+        print(f"Faktorial cemi: {pre_n}")
+        print(f"Xosbextdirmi?: True")
+    else:
+        print("-------------------------------------------")
+        print(f"Faktorial cemi: {get_factorial_sum(pre_n)}")
+        print(f"Xosbextdirmi?: True")
+num = int(input("Enter the number: "))
+is_happy(get_factorial_sum(num))
+'''
+
+''' 1
+x = float(input("Enter the x: "))
+y = float(input("Enter the y: "))
+from math import *
+if (x ** 2 + y ** 2 <= 30 and -3 <= y <= sin(x)) or (x ** 2 + y ** 2 <= 30 and sin(x) <= y <= 2 * x - 3):
+    print("oblastdadir")
+else:
+    print("Oblastda deyil")
+'''
+
+''' 2
+def sade(n):
+    s = 0
+    for i in range (2, n // 2 + 1):
+        if n % i == 0:
+            s = 1
+    return True if s == 0 else False
+count = int(input("Enter the count of numbers: "))
+cem = 0
+for i in range (1, count + 1):
+    num = int(input("Enter the number: "))
+    if sade(num):
+        cem = cem + num
+    else:
+        break
+print(f"Yekun cem: {cem}")
+'''
+
+''' 3
+def r_cem(n):
+    cem = 0
+    while n > 0:
+        cem = cem + n % 10
+        n = n // 10
+    return cem
+def r_koku(n):
+    addim = 0
+    pre_n = n
+    while n > 9:
+        n = r_cem(n)
+        addim = addim + 1
+        print(f"Addim {addim}: {pre_n} reqemleri cemi = {n}")
+        pre_n = n
+    print("--------------------")
+    print(f"Yekun reqem koku: {n}")
+    print(f"Cemi addim sayi: {addim}")
+num = int(input("Enter the number: "))
+r_koku(num)
+'''
+
+''' 4
+def uzunluq(n):
+    say = 0
+    while n > 0:
+        n = n // 10
+        say = say + 1
+    return say
+def armstronq(n):
+    cem = 0
+    quvvet = uzunluq(n)
+    pre_n = n
+    while n > 0:
+        cem = cem + (n % 10) ** quvvet
+        n = n // 10
+    return True if pre_n == cem else False
+araliq_1 = int(input("Araligi daxil edin: "))
+araliq_2 = int(input("Araligi daxil edin: "))
+say = 0
+for i in range ( araliq_1, araliq_2 + 1):
+    if armstronq(i):
+        print(f"Tapildi: {i}")
+        say = say + 1
+print(f"Cemi {say} Armstronq eded tapildi")
+'''
+
+''' 5
+def r_cem(n):
+    cem = 0
+    while n > 0:
+        cem = cem + n % 10
+        n = n // 10
+    return cem
+def bir_say(n):
+    say = 0
+    while n > 0:
+        if n % 10 == 1:
+            say = say + 1
+        n =n // 10
+    return say
+def ikilik(n):
+    k = 0
+    binary = 0
+    while n > 0:
+        binary = binary + n % 2 * 10 ** k
+        k = k + 1
+        n = n // 2
+    return binary
+def sekkizlik(n):
+    k = 0
+    octal = 0
+    while n > 0:
+        octal = octal + n % 2 * 10 ** k
+        k = k + 1
+        n = n // 2
+    return octal
+def balans(n):
+    print("---------------")
+    print(f"Daxil edilen eded: {n}")
+    print(f"Sekkizlik ededlerin cemi: {r_cem(sekkizlik(n))}")
+    print(f"Ikilik 1-lerin sayi: {bir_say(ikilik(n))}")
+    if r_cem(sekkizlik(n)) == bir_say(ikilik(n)):
+        print("Netice: True")
+    else:
+        print("Netice: False")
+num = int(input("Eded daxil edin: "))
+balans(num)
+'''  
