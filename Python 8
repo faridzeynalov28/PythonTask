@@ -1,0 +1,472 @@
+''' 1
+txt = input("Enter text: ")
+sim = input("Enter simvol: ")
+def f(txt, sim):
+    flag = 0
+    for i in txt:
+        if i == sim:
+            flag = 1
+    return "Movcuddur" if flag == 1 else "Movcud deyil"
+print(f(txt, sim))
+'''
+
+''' 7
+def uzunluq(x):
+    count = 0
+    for i in x:
+        count += 1
+    return count
+
+def rep(a, b, c):
+    s = ''
+    m = uzunluq(a)  # banana
+    n = uzunluq(b)
+    i = 0
+    while i < m - n:
+        if a[i: i + n] == b:
+            s = s + c
+            i = i + n - 1
+        else:
+            s = s + a[i]
+        i += 1
+    return s
+
+x = input("metni daxil et")
+y = input("neyi deyishim")
+z = input("ne ile deyishim")
+print(rep(x, y, z))
+'''
+
+
+
+''' 2
+txt = input("Enter text: ")
+s = ""
+for i in txt:
+    if i == "b":
+        s = s + "a"
+    elif i == "a":
+        s = s + "b"
+    elif i == "A":
+        s = s + "B"
+    elif i == "B":
+        s = s + "A"
+    else:
+        s = s + i
+print(s)
+'''
+
+''' 8
+def uzunluq(txt):
+    s = 0
+    for i in txt:
+        s = s + 1
+    return s
+
+txt = input("Enter text: ")
+sim = input("Enter symbol: ")
+m = uzunluq(txt)
+n = uzunluq(sim)
+say = 0
+for i in range (0, m - n + 1):
+    if txt[i: i + n] == sim:
+        say += 1
+print(say)
+'''     
+
+''' 11
+def siyah(x):
+    d=[]
+    x=x+" "
+    soz=""
+    for i in range(0,len(x)):
+        if x[i]!=" ":
+            soz+=x[i]
+        else:
+            d=d+[soz]
+            soz=""
+    return d
+
+def duzelt(y):
+    s=len(y)
+    bos=""
+    for i in range(0,s):
+        if i==1:
+            continue
+        bos=bos+y[i]
+    return bos
+       
+   
+metn=input()
+yeni=[]
+kohne=siyah(metn)
+
+for i in kohne:
+    yeni=yeni+[duzelt(i)]
+bos1=""
+for i in yeni:
+    bos1=bos1+i+" "
+
+def my_join(sep, lst):
+    result = ""
+    for i i range (len(bos1)):
+        result += bos1[i]
+        if i != len(bos1) - 1:
+            result += sep
+    return result
+'''
+
+''' 3
+def my_split(txt):                 
+    sozler = []
+    soz = ""
+
+    for i in txt:
+        if i != " ":
+            soz += i
+        else:
+            if soz != "":
+                sozler += [soz]
+                soz = ""
+
+    if soz != "":
+        sozler += [soz]
+        
+    return sozler
+
+txt = input("Enter text: ")
+count = 0
+for i in my_split(txt):
+    count += 1
+print(f"soz sayi: {count}")
+'''
+
+''' 4
+def my_split(txt):                 
+    sozler = []
+    soz = ""
+    for i in txt:
+        if i != " ":
+            soz += i
+        else:
+            if soz != "":
+                sozler += [soz]
+                soz = ""
+    if soz != "":
+        sozler += [soz]
+    return sozler
+
+def lenn(txt):
+    count = 0
+    for i in txt:
+        count += 1
+    return count
+
+txt = input("enter text: ")
+maks = 0
+en_u_soz = ""
+for i in my_split(txt):
+    if maks < lenn(i):
+        maks = lenn(i)
+        en_u_soz = i
+print(f"en uzun soz: {en_u_soz}, uzunluq: {maks}")
+'''
+
+''' 5
+def my_split(txt):                 
+    sozler = []
+    soz = ""
+    for i in txt:
+        if i != " ":
+            soz += i
+        else:
+            if soz != "":
+                sozler += [soz]
+                soz = ""
+    if soz != "":
+        sozler += [soz]
+    return sozler
+
+txt = input("Soyad, ad ve ata adinzi daxil edin: ")
+soyad = my_split(txt)[0]
+ad = (my_split(txt)[1])[0]
+ata = (my_split(txt)[2])[0]
+print(ad + "." + ata + "." + " " + soyad)
+'''
+
+''' 6
+def fayl(txt):
+    soz = ""
+    for i in txt:
+        if i != "/":
+            soz += i
+        else:
+            print(soz)
+            soz = ""
+
+txt = input("enter text: ")
+fayl(txt)
+'''
+
+''' 9
+def my_split(txt):                 
+    sozler = []
+    soz = ""
+    for i in txt:
+        if i != " ":
+            soz += i
+        else:
+            if soz != "":
+                sozler += [soz]
+                soz = ""
+    if soz != "":
+        sozler += [soz]
+    return sozler
+
+txt = input("enter text: ")
+evez = input("enter text: ")
+evezeden = input("enter text: ")
+yeni = []
+for i in my_split(txt):
+    if i == evez:
+        yeni += [evezeden]
+    else:
+        yeni += [i]
+
+def my_join(sep, txt):
+    result = ""
+    for i in txt:
+        result += i
+        if i != len(txt) - 1:
+            result += " "
+    return result
+print(my_join(" ", yeni))
+'''
+
+''' 12
+metn = input("Metni daxil edin: ")
+
+sait = input("Elifba daxil edin")
+samit = input("Elifba daxil edin")
+reqem = input("Elifba daxil edin")
+durgu = input("Elifba daxil edin")
+tapilanlar = []
+
+for simvol in setir:
+    flag = False
+    for s in saitler + samitler + reqemler + durgu:
+        if simvol == s:
+            flag = True
+            break
+    if flag:
+        movcud = False
+        for t in tapilanlar:
+            if simvol == t:
+                movcud = True
+                break
+        if not movcud:
+            tapilanlar.append(simvol)
+
+print("Tapılan simvollar:", tapilanlar)
+'''
+
+''' 13
+txt = input("ifadeni daxil edin: ")
+eded = ""
+cem = 0
+for i in txt:
+    if i != "+":
+        eded += i
+    else:
+        eded = int(eded)
+        cem += eded
+        eded = ""
+eded = int(eded)
+cem += eded
+print(cem)
+'''
+
+''' 14
+txt = input("ifadeni daxil edin: ")
+
+isare = "+"
+cem = 0
+eded = ""
+for i in txt:
+    if i != "+" and i != "-":
+        eded += i
+    else:
+        if isare == "+":
+            eded = int(eded)
+            cem += eded
+        else:
+            eded = int(eded)
+            cem -= eded
+        eded = ""
+        isare = i
+eded = int(eded)
+if isare == "+":
+    cem += eded
+else:
+    cem -= eded
+print(cem)
+'''
+
+''' 15
+txt = input("enter text: ")
+
+def my_split(txt):                 
+    sozler = []
+    soz = ""
+    for i in txt:
+        if i != " ":
+            soz += i
+        else:
+            if soz != "":
+                sozler += [soz]
+                soz = ""
+    if soz != "":
+        sozler += [soz]
+    return sozler
+l_txt = my_split(txt)
+print(l_txt[0])
+'''
+
+''' 16
+fayl = input("faylin adini daxil edin: ")
+y_genis = input("Genislenmeni daxil edin: ")
+y_fayl = ""
+for i in fayl:
+    if i != ".":
+        y_fayl += i
+    else:
+        y_fayl += "."
+        y_fayl += y_genis
+        break
+print(y_fayl)
+'''
+
+''' 17
+fayl = input("enter file name: ")
+
+def uzunluq(fayl):
+    count = 0
+    for i in fayl:
+        if i != ".":
+            count += 1
+    return True if count <= 10 else False
+
+def simvol(fayl):
+    s = ["/",":","*","?","<",">","|"]
+    for i in fayl:
+        if i in s:
+            return False
+    return True
+
+if uzunluq(fayl) and simvol(fayl):
+    print("Uygundur")
+else:
+    print("Uygun deyil")
+'''
+
+''' 18
+qovluq = input("qovluq adini  daxil edin: ")
+
+def uzunluq(txt):
+    count = 0
+    for i in txt:
+        count += 1
+    return True if  15 >= count >= 5 else False
+
+def boyuk(txt):
+    for i in txt:
+        if "A" <= i <= "Z":
+            return True
+    return False
+
+def kicik(txt):
+    for i in txt:
+        if "a" <= i <= "z":
+            return True
+    return False
+
+def reqem(txt):
+    for i in txt:
+        if "0" <= i <= "9":
+            return True
+    return False
+
+def simvol(txt):
+    s = [".","-","~","_","=",":"]
+    for i in txt:
+        if i in s:
+            return True
+    return False
+
+if uzunluq(qovluq):
+    if boyuk(qovluq):
+        if kicik(qovluq):
+            if reqem(qovluq):
+                if simvol(qovluq):
+                    print("Her sey duzdur")
+                else:
+                    print("Yanlis!")
+            else:
+                print("Yanlis!")
+        else:
+            print("Yanlis!")
+    else:
+        print("Yanlis!")
+else:
+    print("5<=simvol sayi<=15 olmalidir")
+'''
+
+'''1 (elave)
+txt = input("ifadeni daxil edin: ")
+
+def my_split(txt):
+    s = []
+    word = ""
+    d = ["*","/","+","-"]
+    for i in txt:
+        if not i in d:
+            word += i
+        else:
+            s += [word]
+            word = ""
+    s += [word]
+    return s
+
+def durgu_split(txt):
+    s = []
+    d = ["*","/","+","-"]
+    for i in txt:
+        if i in d:
+            s += [i]
+    return s
+
+reqemler = my_split(txt)
+durgular = durgu_split(txt)
+yeni_reqemler = [int(reqemler[0])]
+yeni_durgular = []
+
+for i in range(len(durgular)):
+    if durgular[i] == "*":
+        yeni_reqemler[-1] = yeni_reqemler[-1] * int(reqemler[i+1])
+    elif durgular[i] == "/":
+        yeni_reqemler[-1] = yeni_reqemler[-1] / int(reqemler[i+1])
+    else:
+        yeni_reqemler += [int(reqemler[i+1])]
+        yeni_durgular += [durgular[i]]
+
+cem = yeni_reqemler[0]
+
+for i in range(len(yeni_durgular)):
+    if yeni_durgular[i] == "+":
+        cem += yeni_reqemler[i+1]
+    elif yeni_durgular[i] == "-":
+        cem -= yeni_reqemler[i+1]
+    
+
+print(cem)
+'''
