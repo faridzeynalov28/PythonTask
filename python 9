@@ -1,0 +1,539 @@
+''' task 1
+t = (4, 6, 3, 9, 12, 24, 24, 76, 63)
+indeksler = [i for i in range(len(t)) if t[i] == 24]
+print(indeksler)
+'''
+
+''' task 2
+t = (4, 6, 3, 9, 12, 24, 24, 76, 63)
+ededler = [i for i in t if i % 3 == 0]
+print(ededler)
+'''
+
+''' task 3
+lst = list(map(int,input().split()))
+lst_2 = []
+for i in lst:
+    lst_2 += [i + 5]
+print(lst, lst_2)
+'''
+
+''' task 4
+lst = list(map(int,input().split()))
+lst_2 = [i for i in lst if i % 2 == 1]
+print(lst_2)
+'''
+
+''' task 5
+import random
+lst = [random.randint(0, 10) for i in range(7)]
+
+cem = 0
+hasil = 1
+for i in lst:
+    cem += i
+    hasil *= i
+print(f"Cem = {cem}  Hasil = {hasil}  Ededi orta = {"{:.2f}".format(cem / len(lst))}")
+
+boyuk = 0
+indeks_boyuk = 0
+kicik = 10
+indeks_kicik = 0
+for i in range(len(lst)):
+    if lst[i] >= boyuk:
+        boyuk = lst[i]
+        indeks_boyuk = i
+    if lst[i] <= kicik:
+        kicik = lst[i]
+        indeks_kicik = i
+print(f"En boyuk eded = {boyuk} , indeks = {indeks_boyuk}")
+print(f"En kicik eded = {kicik} , indeks = {indeks_kicik}")
+print(lst)
+'''
+
+
+''' reverse funksiya
+def my_reverse(lst):
+    k = len(lst) - 1
+    for i in range(0, len(lst) // 2):
+        a = lst[i]
+        lst[i] = lst[i + k]
+        lst[i + k] = a
+        k = k - 2
+    return lst
+lst = list(map(int,input().split()))
+print(my_reverse(lst))
+'''
+
+''' task 23
+lst = list(map(int,input().split()))
+boyuk = float("-inf")
+ikinci_boyuk = float("-inf")
+for i in lst:
+    if i > boyuk:
+        ikinci_boyuk = boyuk
+        boyuk = i
+    elif i > ikinci_boyuk and i != boyuk:
+        ikinci_boyuk = i
+
+kicik = float("inf")
+ikinci_kicik = float("inf")
+for i in lst:
+    if i < kicik:
+        ikinci_kicik = kicik
+        kicik = i
+    elif i < ikinci_boyuk and i != kicik:
+        ikinci_kicik = i
+       
+print(ikinci_kicik, ikinci_boyuk)
+'''
+
+''' task 24
+lst = list(map(int,input().split()))
+boyuk = float("-inf")
+ikinci_boyuk = float("-inf")
+say = 0
+for i in lst:
+    if i > boyuk:
+        ikinci_boyuk = boyuk
+        boyuk = i
+    elif i == boyuk:
+        k = say
+    elif i > ikinci_boyuk:
+        ikinci_boyuk == i
+'''
+
+
+''' task 6
+import random
+lst = [random.randint(0, 100) for i in range(10)]
+
+lst_k_50 = [i for i in lst if i < 50]
+lst_b_50 = [i for i in lst if i >= 50]
+
+cem_1 = 0
+cem_2 = 0
+for i in lst_k_50:
+    cem_1 += i
+for i in lst_b_50:
+    cem_2 += i
+
+print(f"[0, 50) araliginda ededi orta = {cem_1 / len(lst_k_50)}")
+print(f"[50, 100] araliginda ededi orta = {cem_2 / len(lst_b_50)}")
+'''
+
+''' task 7
+lst = [i ** 2 for i in range(1, 16)]
+
+first_5 = [lst[i] for i in range(0, 5)]
+last_5 = [lst[i] for i in range(10, 15)]
+
+print(f"Ilk 5 element = {first_5}")
+print(f"Son 5 element = {last_5}")
+'''
+
+''' task 8
+lst_1 = list(map(int,input("Siyahi elave edin: ").split()))
+lst_2 = list(map(int,input("Siyhai elave edin: ").split()))
+
+flag = 0
+for i in lst_1:
+    for k in lst_2:
+        if i == k:
+            flag = 1
+            break
+
+if flag == 1:
+    print("Cavab ortaq element var")
+else:
+    print("Ortaq element yoxdur")
+'''
+
+''' task 9
+lst_1 = list(map(int,input("Siyahi elave edin: ").split()))
+lst_2 = list(map(int,input("Siyhai elave edin: ").split()))
+
+lst = []
+count = 0
+for i in range(len(lst_1)):
+    if lst_1[i] == lst_2[i]:
+        lst += [lst_1[i]]
+        count += 1
+
+print(f"Tekrarlanan elementler: {lst}")
+print(f"Tekrarlanan elementlerin sayi: {count}")
+'''
+
+''' task 10
+lst = list(map(int,input("Siyahi elave edin: ").split()))
+
+first = lst[0]
+for i in range(len(lst) - 1):
+    lst[i] = lst[i + 1]
+
+lst[len(lst) - 1] = first
+print(lst)
+'''    
+               
+''' task 11
+lst_1 = list(map(str,input("Siyahi elave edin: ").split()))
+lst_2 = list(map(str,input("Siyahi elave edin: ").split()))
+new_lst = []
+lst_3 =[]
+
+for i in range(len(lst_1)):
+    lst_3 += [lst_1[i]]
+    lst_3 += [lst_2[i]]
+    new_lst += [lst_3]
+    lst_3 = []
+print(new_lst)
+'''
+
+''' task 12
+lst = list(map(int,input("Siyahi elave edin: ").split()))
+cem = 0
+for i in lst:
+    if i % 2 == 0:
+        break
+    else:
+        cem += i
+print(f"Ilk cute qeder cem = {cem}")
+'''
+
+''' task 13
+n = int(input("uzunluq daxil edin: "))
+import random
+lst = [random.randint(10, 50) for i in range(n)]
+new_lst = []
+
+for i in lst:
+    if i ** 0.5 == int(i ** 0.5):
+        new_lst += [i]
+print(new_lst, lst)
+'''
+
+''' task 14
+n = int(input("uzunluq daxil edin: "))
+import random
+lst = [random.randint(100, 999) for i in range(n)]
+
+def check(num):
+    a = num % 10
+    b = num // 10 % 10
+    if a >= b:
+        ferq = a - b
+    else:
+        ferq = b - a
+    cem = a + b
+    return True if ferq % 2 == 1 and cem % 2 == 1 else False
+
+new_lst =[]
+for i in lst:
+    if check(i):
+        new_lst += [i]
+print(new_lst, lst)
+'''
+
+''' task 15
+n = int(input("uzunluq daxil edin: "))
+import random
+lst = [random.randint(0, 100) for i in range(n)]
+new_lst = []
+
+def sade_check(num):
+    for i in range(2, num // 2 + 1):
+        if num % i == 0:
+            return False
+    return True
+
+for i in lst:
+    if sade_check(i):
+        new_lst += [i]
+print(new_lst, lst)
+'''
+
+''' task 16
+import random
+lst = [random.randint(-10, 10) for i in range(10)]
+new_lst =[]
+
+for i in lst:
+    if i < 0 and abs(i) % 2 == 0:
+        new_lst += [i]
+print(new_lst)
+'''
+
+''' task 17
+lst = [1, 2, "aasf", "1", "123", 123]
+new_lst = []
+
+for i in lst:
+    if type(i) == int and i >= 0:
+        new_lst += [i]
+print(new_lst)
+'''
+
+''' task 18
+num = int(input("Enter number: "))
+new_lst = []
+
+for i in range(1, num + 1):
+    if num % i == 0:
+        new_lst += [i]
+print(new_lst)
+'''
+
+''' task 19
+N = list(map(int,input("Enter number: ").split()))
+new_lst = []
+from math import *
+cem = 0
+cem_1 = 0
+
+def ifade(num):
+    return (4 * sin(num) + 2 * num) / (log(9 * num, 3) * (2 ** num))
+
+for i in N:
+    for k in range(1, i + 1):
+        cem += ifade(k)
+    cem_1 += cem
+    new_lst += [round(cem_1, 2)]
+    cem = 0
+print(new_lst)
+'''
+
+''' task 20
+N = list(map(int,input("Enter number: ").split()))
+new_lst = []
+from math import *
+cem = 0
+cem_1 = 0
+
+def ifade(num):
+    return (cos((num ** 2 + 1) ** num) ** num) / (log(8, 3) * ((num + num ** 2) ** num))
+
+for i in N:
+    for k in range(0, i + 1):
+        cem += ifade(k)
+    cem_1 += cem
+    new_lst += [round(cem_1, 2)]
+    cem = 0
+print(new_lst)
+'''
+
+''' task 21
+import random
+A = [random.randint(-100, 100) for i in range(8)]
+B = []
+musbet = []
+menfi = []
+count = 0
+for i in A:
+    if i > 0:
+        musbet += [i]
+        count += 1
+    else:
+        menfi += [i]
+B += musbet
+B += menfi
+print(B, count)
+'''
+
+''' task 22
+import random
+lst = [random.randint(0, 100) for i in range(10)]
+new_lst = []
+
+def fibonaccidir(n):
+    a = 1
+    b = 1
+    while a <= n:
+        if a == n:
+            return True
+        a, b = b, a + b
+    return False
+
+for i in lst:
+    if fibonaccidir(i):
+        new_lst += [i]
+print(new_lst, lst)
+'''
+
+''' task 25
+lst = list(map(int,input("Enter number: ").split()))
+maks = lst[0]
+count = 0
+
+for i in range(1, len(lst)):
+    if maks < lst[i]:
+        maks = lst[i]
+
+for i in lst:
+    if i == maks:
+        count += 1
+print(count)
+'''
+
+''' task 26
+n = int(input("Enter number: "))
+if n % 2 == 0:
+    import random
+    lst = [random.randint(100, 200) for i in range(n)]
+
+    def ekob(a, b):
+        hasil = a * b
+        while a != b:
+            if a > b:
+                a -= b
+            else:
+                b -= a
+        return hasil // a
+
+    new_lst = []
+    for i in lst:
+        new_lst += [(i % 10) ** 3 + (i // 10 % 10) ** 3 + (i // 100) ** 3]
+
+    last_lst = []
+    for i in range(0, len(new_lst), 2):
+        last_lst += [ekob(new_lst[i], new_lst[i + 1])]
+    print(last_lst)
+else:
+    print("say cut olmalidir!")
+'''
+
+''' task 27
+n = int(input("Enter number: "))
+if n % 2 == 0:
+    import random
+    lst = [random.randint(100, 999) for i in range(n)]
+
+    lst_1 = lst[0:len(lst) // 2]
+    lst_2 = lst[len(lst) // 2 - 1::]
+    ters_lst_1 = []
+    ters_lst_2 = []
+
+    for i in range(len(lst_1) - 1, -1, -1):
+        ters_lst_1 += [lst_1[i]]
+
+    for i in range(len(lst_2) - 1, -1, -1):
+        ters_lst_2 += [lst_2[i]]
+
+    print(ters_lst_1 + ters_lst_2, lst)
+else:
+    print("say cut olmalidir")
+'''
+
+''' task 28
+article_list = ["the", "a", "one", "some", "any"]
+noun_list = ["boy", "girl", "dog", "town" , "car"]
+verb_list = ["drove", "jumped", "ran", "walked" , "skipped"] 
+preposition_list = ["to", "from", "over", "under" , "on"]
+metn = ""
+cumle = ""
+cumle_sayi = int(input("Cumle sayini daxil edin"))
+import random
+
+if cumle_sayi >= 5:
+    for i in range(cumle_sayi):
+        k = random.randint(0, len(article_list) - 1)
+        cumle += article_list[k][0].upper()
+        cumle += article_list[k][1: len(article_list[k]) - 1]
+        cumle += " "
+        k = random.randint(0, len(noun_list) - 1)
+        cumle += noun_list[k]
+        cumle += " "
+        k = random.randint(0, len(verb_list) - 1)
+        cumle += verb_list[k]
+        cumle += " "
+        k = random.randint(0, len(preposition_list) - 1)
+        cumle += preposition_list[k]
+        cumle += " "
+        k = random.randint(0, len(article_list) - 1)
+        cumle += article_list[k]
+        cumle += " "
+        k = random.randint(0, len(noun_list) - 1)
+        cumle += noun_list[k]
+        cumle += "."
+        metn += cumle
+        metn += " "
+        cumle = ""
+    print(metn)
+else:
+    print("en az 5 cumle olmalidir")
+'''
+    
+''' task 29
+print("0-100 araliginda qiymetlerinizi daxil edin:")
+
+fizika = int(input("fizika qiymet: "))
+riyaz = int(input("riyaziyyat qiymet: "))
+kimya = int(input("kimya qiymet: "))
+ing = int(input("ingilis-dili qiymet: "))
+ana = int(input("ana-dili qiymet: "))
+
+cavablar = []
+cavablar += [fizika]
+cavablar += [riyaz]
+cavablar += [kimya]
+cavablar += [ing]
+cavablar += [ana]
+print(f"cavablariniz: {cavablar}")
+
+count_a = 0
+count_b = 0
+count_c = 0
+count_d = 0
+count_e = 0
+
+for i in cavablar:
+    if 91 <= i <= 100:
+        count_a += 1
+    elif 81 <= i < 91:
+        count_b += 1
+    elif 71 <= i < 81:
+        count_c += 1
+    elif 61 <= i < 71:
+        count_d += 1
+    else:
+        count_e += 1
+
+print("sizin qiymetleriniz:")
+print(f"{count_a} eded A,")
+print(f"{count_b} eded B,")
+print(f"{count_c} eded C,")
+print(f"{count_d} eded E, ve")
+print(f"{count_e} eded kesriniz var")
+'''
+
+''' task 30
+fizika = input("fizika kecdiz? he/yox: ")
+riyaz = input("riyaziyyat kecdiz? he/yox: ")
+kimya = input("kimya kecdiz? he/yox: ")
+ing = input("ingilis-dili kecdiz? he/yox: ")
+ana = input("ana-dili kecdiz? he/yox: ")
+
+cavablar = []
+cavablar += [fizika]
+cavablar += [riyaz]
+cavablar += [kimya]
+cavablar += [ing]
+cavablar += [ana]
+print(f"cavablariniz: {cavablar}")
+
+count = 0
+for i in cavablar:
+    if i == "he":
+        count += 1
+
+print("Sizin tedris neticeniz beledir:")
+if 4 <= count <= 5:
+    print("elachi")
+elif count == 3:
+    print("yaxshi")
+elif 2 <= count < 3:
+    print("kafi")
+elif count == 1:
+    print("pis")
+else:
+    print("butun derslerden kesilmisiniz")
+'''    
