@@ -1,0 +1,320 @@
+'''
+def bubble(lst):
+    for i in range(len(lst) - 1):
+        for k in range(len(lst) - 2, i - 1, -1):
+            if lst[k + 1] < lst[k]:
+                lst[k + 1], lst[k] = lst[k], lst[k + 1]
+    return lst
+
+def selec(lst):
+    for i in range(len(lst) - 1):
+        nMin = i
+        for j in range(i + 1, len(lst)):
+            if lst[j] < lst[nMin]:
+                nMin = j
+        if i != nMin:
+            lst[i], lst[nMin] = lst[nMin], lst[i]
+    return lst
+
+def qSort(lst):
+    if len(lst) <= 1:
+        return lst
+    x = lst[len(lst) // 2]
+    b1 = [b for b in lst if b < x]
+    bx = [b for b in lst if b == x]
+    b2 = [b for b in lst if b > x]
+    return qSort(b1) + bx + qSort(b2)
+'''
+
+'''
+n = int(input("enter length: "))
+import random
+lst = [random.randint(0, 5) for i in range(n)]
+k = 0
+num = int(input("axtarilan eded"))
+new_lst = [f"Tapildi: lst[{i}] = {num}" for i in range(len(lst)) if lst[i] == num]
+print(new_lst)
+'''
+
+'''
+n = int(input("enter length: "))
+lst = []
+for i in range(1, n + 1):
+    soz = input()
+    print(f"{i}.{soz}")
+    lst += [soz]
+
+def bubble(lst):
+    for i in range(len(lst) - 1):
+        for k in range(len(lst) - 2, i - 1, -1):
+            if lst[k + 1][0] < lst[k][0]:
+                lst[k + 1], lst[k] = lst[k], lst[k + 1]
+    return lst
+       
+print(f"Elifba sirasi: {bubble(lst)}")
+'''
+
+'''
+n = int(input("enter length: "))
+lst = []
+for i in range(1, n + 1):
+    soz = input()
+    print(f"{i}.{soz}")
+    lst += [soz]
+
+def selec(lst):
+    for i in range(len(lst) - 1):
+        nMin = i
+        for j in range(i + 1, len(lst)):
+            if lst[j][0] < lst[nMin][0]:
+                nMin = j
+        if i != nMin:
+            lst[i], lst[nMin] = lst[nMin], lst[i]
+    return lst
+       
+print(f"Elifba sirasi: {selec(lst)}")
+'''
+
+'''
+n = int(input("enter length: "))
+print("Ad, ata adi, soyad daxil edin:")
+lst = []
+for i in range(n):
+    soz = input()
+    lst += [soz]
+
+print("Elifba sirasi:")
+def bubble(lst):
+    for i in range(len(lst) - 1):
+        for k in range(len(lst) - 2, i - 1, -1):
+            if lst[k + 1][0] < lst[k][0]:
+                lst[k + 1], lst[k] = lst[k], lst[k + 1]
+    return lst
+print(bubble(lst))  
+'''
+
+'''
+n = int(input("Enter length: "))
+import random
+lst = [random.randint(-100, 100) for i in range(n)]
+new_lst = []
+ind = 0
+for i in lst:
+    if i >= 0:
+        new_lst += [i]
+        ind += 1
+for i in lst:
+    if i < 0:
+        new_lst += [i]
+def bubble_az(lst):
+    for i in range(len(lst) - 1):
+        for k in range(len(lst) - 2, i - 1, -1):
+            if lst[k + 1] > lst[k]:
+                lst[k + 1], lst[k] = lst[k], lst[k + 1]
+    return lst
+
+def bubble_art(lst):
+    for i in range(len(lst) - 1):
+        for k in range(len(lst) - 2, i - 1, -1):
+            if lst[k + 1] < lst[k]:
+                lst[k + 1], lst[k] = lst[k], lst[k + 1]
+    return lst
+print(lst, bubble_az(new_lst[0:ind - 1]) + bubble_art(new_lst[ind:n - 1]))
+'''
+
+'''
+n = int(input("Enter length: "))
+import random
+lst = [random.randint(-100, 100) for i in range(n)]
+new_lst = []
+ind = 0
+for i in lst:
+    if i >= 0:
+        new_lst += [i]
+        ind += 1
+for i in lst:
+    if i < 0:
+        new_lst += [i]
+def selec_az(lst):
+    for i in range(len(lst) - 1):
+        nMax = i
+        for j in range(i + 1, len(lst)):
+            if lst[j] > lst[nMax]:
+                nMax = j
+        if i != nMax:
+            lst[i], lst[nMax] = lst[nMax], lst[i]
+    return lst
+
+def selec_art(lst):
+    for i in range(len(lst) - 1):
+        nMin = i
+        for j in range(i + 1, len(lst)):
+            if lst[j] < lst[nMin]:
+                nMin = j
+        if i != nMin:
+            lst[i], lst[nMin] = lst[nMin], lst[i]
+    return lst
+print(lst, selec_az(new_lst[0:ind - 1]) + selec_art(new_lst[ind:n - 1]))
+'''
+
+'''
+import random
+lst_1 = [random.random() for i in range(1000)]
+lst_2 = [random.random() for i in range(1000)]
+lst_3 = [random.random() for i in range(1000)]
+lst_4 = [random.random() for i in range(1000)]
+lst_5 = [random.random() for i in range(1000)]
+
+def selec(lst):
+    count = 0
+    for i in range(len(lst) - 1):
+        nMin = i
+        for j in range(i + 1, len(lst)):
+            if lst[j] < lst[nMin]:
+                nMin = j
+        if i != nMin:
+            lst[i], lst[nMin] = lst[nMin], lst[i]
+            count += 1
+    return count
+
+def bubble(lst):
+    count = 0
+    for i in range(len(lst) - 1):
+        for k in range(len(lst) - 2, i - 1, -1):
+            if lst[k + 1] < lst[k]:
+                lst[k + 1], lst[k] = lst[k], lst[k + 1]
+                count += 1
+    return count
+
+print(f"1.massiv: {selec(lst_1[:])}, {bubble(lst_1)}")
+print(f"2.massiv: {selec(lst_2[:])}, {bubble(lst_2)}")
+print(f"3.massiv: {selec(lst_3[:])}, {bubble(lst_3)}")
+print(f"4.massiv: {selec(lst_4[:])}, {bubble(lst_4)}")
+print(f"5.massiv: {selec(lst_5[:])}, {bubble(lst_5)}")
+'''
+
+
+'''
+def binary_search(A, target):
+   left = 0
+   right = len(A) - 1
+   count = 0
+   while left <= right:
+       mid = (left + right) // 2
+       count += 1
+       if target == A[mid]:
+           return "tapildi", count
+       else:
+           if target > A[mid]:
+               left = mid + 1
+           else:
+               right = mid - 1
+   return -1
+
+import random
+lst = [random.randint(0,10) for i in range(9)]
+
+def selec(lst):
+    for i in range(len(lst) - 1):
+        nMin = i
+        for j in range(i + 1, len(lst)):
+            if lst[j] < lst[nMin]:
+                nMin = j
+        if i != nMin:
+            lst[i], lst[nMin] = lst[nMin], lst[i]
+    return lst
+x = int(input("axtarilan daxil edin: "))
+print(lst)
+print(binary_search(selec(lst),x))
+'''
+
+
+'''
+n = int(input("enter length: "))
+import random
+lst = [random.randint(100, 999) for i in range(n)]
+
+def count_menfi(num):
+    count = 0
+    while num > 0:
+        if num % 10 % 2 == 1:
+            count += 1
+        num //= 10
+    return count
+def count_musbet(num):
+    count = 0
+    while num > 0:
+        if num % 10 % 2 == 0:
+            count += 1
+        num //= 10
+    return count
+
+def selec_1(lst):
+    for i in range(len(lst) - 1):
+        nMin = i
+        for j in range(i + 1, len(lst)):
+            if count_menfi(lst[j]) < count_menfi(lst[nMin]):
+                nMin = j
+        if i != nMin:
+            lst[i], lst[nMin] = lst[nMin], lst[i]
+    return lst
+def selec_2(lst):
+    for i in range(len(lst) - 1):
+        nMax = i
+        for j in range(i + 1, len(lst)):
+            if count_musbet(lst[j]) < count_musbet(lst[nMax]):
+                nMax = j
+        if i != nMax:
+            lst[i], lst[nMax] = lst[nMax], lst[i]
+    return lst
+
+print(selec_1(lst[0,len(lst)//2]), selec_2(lst[len(lst)//2,len(lst)-1]))
+'''
+
+'''
+def binary_search(A, target):
+   left = 0
+   right = len(A) - 1
+   while left <= right:
+       mid = (left + right) // 2
+       if target == A[mid]:
+           return True
+       else:
+           if target > A[mid]:
+               left = mid + 1
+           else:
+               right = mid - 1
+   return False
+
+n = int(input("enter length: "))
+import random
+lst = [random.randint(1,20) for i in range(n)]
+print(lst)
+
+def selec(lst):
+    for i in range(len(lst) - 1):
+        nMin = i
+        for j in range(i + 1, len(lst)):
+            if lst[j] < lst[nMin]:
+                nMin = j
+        if i != nMin:
+            lst[i], lst[nMin] = lst[nMin], lst[i]
+    return lst
+
+x = int(input("enter looked for number:"))
+
+if binary_search(selec(lst), x):
+    print(f"{x} tapildi")
+else:
+    pre_ferq = abs(x - lst[0])
+    closers = []
+    for i in range (1, len(lst)):
+        ferq = abs(x - lst[i])
+        if pre_ferq > ferq:
+            en_kicik_ferq = ferq
+        pre_ferq = ferq
+    for i in lst:
+        if abs(x - i) == en_kicik_ferq:
+            closers += [i]
+    print(closers)
+'''
